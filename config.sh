@@ -8,4 +8,5 @@ SOURCE_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 #nohup busybox httpd -h ${SOURCE_PATH}/ -p 0.0.0.0:8082 > ${SOURCE_PATH}/httpd.out 2>&1 &
 
-nohup node ${SOURCE_PATH}/load.js > ${SOURCE_PATH}/node.out 2>&1 &
+cd ${SOURCE_PATH}
+nohup node ./load.js > ${SOURCE_PATH}/node.out 2>&1 &
