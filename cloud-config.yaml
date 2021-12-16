@@ -5,8 +5,8 @@ packages:
   - nginx
   - git
 runcmd:
-  - wget -q https://raw.githubusercontent.com/YanivYuzis/fred/main/ibm.html -O /var/www/html/index.nginx-debian1.html && systemctl start nginx || echo "*****   ERROR IN WGET 1   *****"
-  - busybox wget -q https://raw.githubusercontent.com/YanivYuzis/fred/main/ibm.html -O /var/www/html/index.nginx-debian2.html && systemctl start nginx || echo " *****   ERROR IN WGET 2   *****"
+  - wget -q https://raw.githubusercontent.com/YanivYuzis/fred/main/index.html -O /var/www/html/index.nginx-debian1.html && systemctl start nginx || echo "*****   ERROR IN WGET 1   *****"
+  - busybox wget -q https://raw.githubusercontent.com/YanivYuzis/fred/main/index.html -O /var/www/html/index.nginx-debian2.html && systemctl start nginx || echo " *****   ERROR IN WGET 2   *****"
   - git clone https://github.com/YanivYuzis/fred.git || echo "*****   ERROR GIT CLONE   *****"
   - /bin/bash ./fred/config.sh || echo " *****   ERROR IN BASH   *****"
   - systemctl start nginx
