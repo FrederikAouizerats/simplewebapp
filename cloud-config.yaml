@@ -7,6 +7,7 @@ packages:
 runcmd:
 #  - wget -q https://raw.githubusercontent.com/YanivYuzis/fred/main/index.html -O /var/www/html/index.nginx-debian1.html && systemctl start nginx
 #  - busybox wget -q https://raw.githubusercontent.com/YanivYuzis/fred/main/index.html -O /var/www/html/index.nginx-debian.html && systemctl start nginx
+  - sleep 10
   - git clone https://github.com/YanivYuzis/fred.git
   - /bin/bash ./fred/config.sh
 #  - systemctl start nginx
