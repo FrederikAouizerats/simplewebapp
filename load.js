@@ -1,5 +1,6 @@
 const http = require("http");
-        
+const fs = require('fs')
+
 function fibo(n) { 
     if (n < 2)
         return 1;
@@ -13,8 +14,8 @@ const server = http.createServer((req, res) => {
     // not more than 40.....
     fibo(35);
 
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Hello, World!\n');
+    res.writeHead(200, { 'content-type': 'text/html' })
+    fs.createReadStream('index.html').pipe(res)
 });
 
-server.listen(8000, () => console.log("running on port 8000"));
+server.listen(80, () => console.log("running on port 80"));
